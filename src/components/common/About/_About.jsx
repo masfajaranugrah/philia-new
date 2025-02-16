@@ -14,7 +14,7 @@ const _About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <h1 className="text-[#2D210A]  text-[30px] lg:text-[40px] xl:text-[30px] md:text-[40px] text-center font-bold">
+          <h1 className="text-[#2D210A]  text-[30px]  md:text-[40px] xl:text-[40px] text-center font-extrabold">
             SELAMAT DATANG DI PHILIA ADVENTURE PARK!
           </h1>
         </motion.div>

@@ -40,7 +40,7 @@ function What() {
 
   return (
     <motion.div initial="hidden" animate="visible" className="container mx-auto flex flex-col items-center">
-      <motion.p className="text-center text-[30px] lg:text-[40px] text-[#2D210A] px-2 font-[Montserrat] font-[1000] my-10">
+      <motion.p className="text-center text-[30px]  md:text-[40px] xl:text-[40px] text-[#2D210A] px-2 font-[Montserrat] font-[1000] my-10">
       ADA APA DI PHILIA HARI INI
       </motion.p>
 

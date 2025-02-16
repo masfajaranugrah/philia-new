@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import { WobbleCard } from "../ui/wobble-card";
+import { WobbleCard } from "../../ui/wobble-card";
 import { ImSearch } from "react-icons/im";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -20,7 +20,7 @@ export default function Rasa() {
         transition={{ duration: 0.8 }}
         className="flex items-center justify-center relative my-10"
       >
-        <p className="  text-[30px] lg:text-[40px] text-[#2D210A] font-[Montserrat] text-center font-[1000]">
+        <p className="  text-[30px]  md:text-[40px] xl:text-[40px]  text-[#2D210A] font-[Montserrat] text-center font-[1000]">
           RASAKAN KESERUANNYA!
         </p>
       </motion.div>

@@ -15,7 +15,7 @@ const Card = () => {
       
       </div>
       {/* Main Content */}
-      <div className="container mx-auto relative z-10 pb-[10rem] lg:pb-[20rem] md:pb-[10rem] md:px-[1rem] lg:px-[40rem] xl:px-[2rem] px-[2rem]">
+      <div className="container mx-auto relative z-10 pb-[10rem] lg:pb-[21rem] md:pb-[10rem] md:px-[1rem] lg:px-[40rem] xl:px-[2rem] px-[2rem]">
         {/* Card Section */}
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
           {[...Array(4)].map((_, index) => (
@@ -25,7 +25,7 @@ const Card = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="rounded-3xl shadow-[8px_8px_0px_#0A2D19] bg-white"
+              className="rounded-3xl shadow-[8px_8px_0px_#0A2D19] bg-[#F6FFEA]"
             >
               <div className="flex flex-col px-2 md:px-10 xl:px-10 lg:px-10 items-center justify-center">
                 {/* Gambar */}

@@ -1,19 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
+import { InfiniteMovingCards } from "../../ui/infinite-moving-cards";
 
 export default function People() {
   return (
-    <div className="w-full mx-auto h-[40rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
+    <div className="w-full mx-auto  mb-10 rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
       <div className="text-center">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8 }}
-          className="  text-center text-[30px] text-[#2D210A]  lg:text-[40px] font-[Montserrat] font-[1000] my-10"
+          className="  text-center text-[30px]  md:text-[40px] xl:text-[40px] text-[#2D210A]    font-[Montserrat] font-[1000] my-10"
         >
-          PEOPLE EXPERIENCES
+          KESERUAN PHILIA
         </motion.p>
       </div>
 

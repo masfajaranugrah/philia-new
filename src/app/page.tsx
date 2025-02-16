@@ -5,12 +5,12 @@ import React, { useEffect, useState, useRef } from "react";
 
 import dynamic from "next/dynamic";
  
-const Banner = dynamic(() => import("@/components/common/Banner"), {ssr: false,});
-const What = dynamic(() => import("@/components/common/What"), {ssr: false,});
-const Rasa = dynamic(() => import("@/components/common/Rasa"), {ssr: false,});
+const Banner = dynamic(() => import("@/components/common/Home/Banner"), {ssr: false,});
+const What = dynamic(() => import("@/components/common/Home/What"), {ssr: false,});
+const Rasa = dynamic(() => import("@/components/common/Home/Rasa"), {ssr: false,});
 const Maps = dynamic(() => import("@/components/common/Maps"), {ssr: false,});
-const People = dynamic(() => import("@/components/common/People"), {ssr: false,});
-const Kunjungan = dynamic(() => import("@/components/common/Kunjungan"), {ssr: false,});
+const People = dynamic(() => import("@/components/common/Home/People"), {ssr: false,});
+const Kunjungan = dynamic(() => import("@/components/common/Home/Kunjungan"), {ssr: false,});
 const Whatsapp = dynamic(() => import("@/components/common/Whatsapp"), {ssr: false,});
  
 

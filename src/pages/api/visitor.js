@@ -8,8 +8,7 @@ export default async function handler(req, res) {
   try {
     const { device, ip_address } = req.body;
 
-    // Kirim data ke backend Laravel (server-side)
-    await axios.post(`${process.env.API_URL}/track-visitor`, {
+     await axios.post(`${process.env.API_URL}/track-visitor`, {
       device,
       ip_address,
     }, {

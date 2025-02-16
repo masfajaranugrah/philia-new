@@ -74,7 +74,7 @@ export const InfiniteMovingCards = ({
         {items.map((item) => (
           <li
             key={item.id || item.title} // Gunakan item.id sebagai key
-            className="w-[350px] max-w-full relative rounded-2xl shadow-[8px_8px_0px_#0A2D19] flex-shrink-0 border-slate-700 px-8 py-6 md:w-[450px] bg-white"
+            className="w-[350px] max-w-full relative rounded-2xl shadow-[8px_8px_0px_#0A2D19] flex-shrink-0 border-slate-700 px-8 py-6 md:w-[450px] bg-[#F6FFEA]"
           >
             <blockquote>
               <div

@@ -7,27 +7,31 @@ import {
 } from "../../ui/accordion";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { fetchFAQ } from "@/lib/fetchData"; 
 
 const According = () => {
   const [question, setQuestion] = useState([]);
-
-  useEffect(() => {
-    fetch("http://10.200.228.250:8000/api/question", {
-      method: "GET",
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setQuestion(data);
-      })
-      .catch((error) => {
-        console.log("Error fetching data:", error);
-      });
-  }, []);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+   useEffect(() => {
+     const getEvents = async () => {
+       try {
+         const data = await fetchFAQ();
+         setQuestion(data);
+       } catch (err) {
+         setError(err.message);
+       } finally {
+         setLoading(false);
+       }
+     };
+ 
+     getEvents();
+   }, []);
 
   return (
     <div className="mt-20 relative">
       <div>
-        <h1 className="text-[40px] font-[1000] text-[#2D210A] text-center mb-10">What do you need?</h1>
+        <h1 className="text-[30px]  md:text-[40px] xl:text-[40px] font-[1000] text-[#2D210A] text-center mb-10">Apa yang ingin kamu tahu?</h1>
       </div>
 
       <div className="container mx-auto relative z-10 xl:pb-[80rem] md:pb-[40rem] pb-[30rem] lg:pb-[50rem] md:px-[2rem] lg:px-[10rem] xl:px-[10rem] px-[1rem]">

@@ -17,7 +17,7 @@ const _Getting = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8, ease: "easeInOut" }}
         >
-          OPENING HOURS
+          JAM BUKA
         </motion.h1>
 
         <motion.p
@@ -35,8 +35,8 @@ const _Getting = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8, ease: "easeInOut" }}
         >
-          FIND US HERE
-        </motion.h2>
+TEMUKAN KAMI DISINI      
+ </motion.h2>
       </div>
 
       <motion.div

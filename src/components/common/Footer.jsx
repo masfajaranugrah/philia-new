@@ -3,6 +3,16 @@ import { motion } from "framer-motion";
 import { FaEnvelope, FaPhoneAlt, FaChevronRight, FaInstagram, FaFacebook, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
+  const menuItems = [
+    { name: "Beranda", url: "/" },
+    { name: "Tentang Kami", url: "/about" },
+    { name: "Kunjungi", url: "/getting" },
+    { name: "Wahana", url: "/wahana" },
+    { name: "Tiket Informasi", url: "/tiket" },
+    { name: "Group", url: "/group" },
+    { name: "Pertanyaan", url: "/faq" },
+    { name: "Acara", url: "/event-calendar" },
+  ];
   return (
     <footer
       className="text-white py-10"
@@ -38,31 +48,34 @@ const Footer = () => {
         </motion.div>
 
         {/* Quick Links */}
-        <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <h3 className="text-xl font-semibold mb-4">Page</h3>
-          <ul className="space-y-2">
-            {["Home", "About Us", "Getting Here", "Wahana", "Tiket Informasi", "Group Visits", "FAQ", "Event Calender"].map(
-              (item, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0, y: -10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                >
-                  <a href="#" className="flex items-center hover:text-gray-300">
-                    <FaChevronRight className="mr-2" /> {item}
-                  </a>
-                </motion.li>
-              )
-            )}
-          </ul>
-        </motion.div>
+ 
+
+<motion.div
+  initial={{ opacity: 0, y: -50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8, delay: 0.4 }}
+>
+  <h3 className="text-xl font-semibold mb-4">Halaman</h3>
+  <ul className="space-y-2">
+    {menuItems.map((item, index) => (
+      <motion.li
+        key={index}
+        initial={{ opacity: 0, y: -10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+        className="flex items-center"
+      >
+        <FaChevronRight className="mr-2" />
+        <a href={item.url} className="hover:text-gray-300">
+          {item.name}
+        </a>
+      </motion.li>
+    ))}
+  </ul>
+</motion.div>
+
 
         {/* Contact Us */}
         <motion.div
@@ -71,8 +84,8 @@ const Footer = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
-          <p className="md:w-2/4">Jl. M. Bakri Kampung Gunung Letik, RT.01/RW.02, Cibodas, Kec. Jonggol, Bogor Timur, Jawa Barat 16830</p>
+          <h3 className="text-xl font-semibold mb-4">Alamat</h3>
+          <p className="md:w-2/4 xl:w-full w-full">Jl. M. Bakri Kampung Gunung Letik, RT.01/RW.02, Cibodas, Kec. Jonggol, Bogor Timur, Jawa Barat 16830</p>
         </motion.div>
 
         {/* Contact Details */}
@@ -82,7 +95,7 @@ const Footer = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
+          <h3 className="text-xl font-semibold mb-4">Kontak</h3>
           <ul className="space-y-2">
             <li className="flex items-center">
               <FaEnvelope className="mr-2" /> <a href="mailto:Philia@info.com" className="hover:text-gray-300">Philia@info.com</a>

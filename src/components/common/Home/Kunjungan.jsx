@@ -11,7 +11,7 @@ function Kunjungan() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8 }}
-          className="  text-center text-[30px] lg:text-[40px] text-[#2D210A]  font-[Montserrat] font-[1000] my-10">
+          className="  text-center text-[30px]  md:text-[40px] xl:text-[40px] text-[#2D210A]  font-[Montserrat] font-[1000] my-10">
           KUNJUNGI PHILIA SEKARANG!
         </motion.p>
       </div>

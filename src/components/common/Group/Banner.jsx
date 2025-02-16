@@ -23,8 +23,8 @@ function Banner() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
           >
-            <h4 className="text-center md:text-[25px] xl:text-[48px] lg:text-[48px] text-[#F6FFEA] text-[40px] font-[1000]">
-            KUNJUNGI PHILIA
+            <h4 className="text-center md:text-[25px] text-[#F6FFEA] xl:text-[48px] lg:text-[48px] text-[40px] font-[1000]">
+            GROUP VISITS
             </h4>
           </motion.div>
         </div>

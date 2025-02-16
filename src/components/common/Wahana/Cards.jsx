@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { Autoplay, Navigation, Thumbs } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import DOMPurify from "dompurify";
 
 import {
   Modal,
@@ -15,6 +16,7 @@ import {
   ModalFooter,
   ModalTrigger,
 } from "../../ui/animated-modal";
+import { fetchFasilitas } from "@/lib/fetchData";
 
 const fadeIn = {
   hidden: { opacity: 0 },
@@ -24,19 +26,28 @@ const fadeIn = {
 const Card = () => {
   const [wahana, setWahana] = useState([]);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("http://192.168.1.22:8000/api/wahana")
-      .then((res) => res.json())
-      .then((data) => setWahana(data))
-      .catch((err) => console.error("Error fetching data:", err));
+    const getEvents = async () => {
+      try {
+        const data = await fetchFasilitas();
+        setWahana(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    getEvents();
   }, []);
- 
-  
+
   return (
     <div className="relative xl:pb-[40rem] lg:pb-[40rem] md:pb-[10rem] pb-[8rem]">
       <motion.div initial="hidden" animate="visible" variants={fadeIn}>
-        <h1 className="text-[40px] font-[1000] text-[#2D210A] text-center">
+        <h1 className="text-[30px] xl:text-[40px] lg:text-[40px] md:text-[40px] font-[1000] text-[#2D210A] text-center">
           RASAKAN KESERUANNYA!
         </h1>
       </motion.div>
@@ -68,9 +79,13 @@ const Card = () => {
                       <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
-                        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                        transition={{
+                          duration: 0.6,
+                          delay: 0.4,
+                          ease: "easeOut",
+                        }}
                         viewport={{ once: false }}
-                        className="bg-white border-2 border-black rounded-[30px] shadow-lg cursor-pointer flex flex-col h-full"
+                        className="bg-[#F6FFEA] border-2 border-black rounded-[30px] shadow-lg cursor-pointer flex flex-col h-full"
                       >
                         <div className="w-full h-[250px] overflow-hidden rounded-t-[30px]">
                           {images.length > 0 && (
@@ -83,15 +98,23 @@ const Card = () => {
                         </div>
 
                         <div className="p-5 border-t-4 border-black flex flex-col flex-grow">
-                          <h5 className="mb-2 text-[20px] font-bold text-gray-900">{item.title}</h5>
-                          <p className="mb-3 text-gray-700 text-[15px] line-clamp-3">
-                            {item.description.length > 150
-                              ? item.description.substring(0, 120) + "..."
-                              : item.description}
-                          </p>
+                          <h5 className="mb-2 text-[20px] font-bold text-gray-900">
+                            {item.title}
+                          </h5>
+                          <p
+                            className="mb-3 text-gray-700 text-[15px] line-clamp-3"
+                            dangerouslySetInnerHTML={{
+                              __html:
+                                item.description.length > 150
+                                  ? item.description.substring(0, 120) + "..."
+                                  : item.description,
+                            }}
+                          />
+
                           <div className="mt-auto flex justify-between items-center">
                             <span className="text-white bg-[#2D210A] font-medium rounded-lg text-sm px-5 py-2.5 flex items-center">
-                              <FaMapMarkerAlt /> {item.location.split(" ")[0] + " ..."}
+                              <FaMapMarkerAlt />{" "}
+                              {item.location.split(" ")[0] + " ..."}
                             </span>
                             <span className="text-white bg-[#2D210A] font-medium rounded-lg text-sm px-5 py-2.5">
                               {new Intl.NumberFormat("id-ID", {
@@ -105,65 +128,83 @@ const Card = () => {
                     </div>
                   </ModalTrigger>
 
-                  <ModalBody className="flex justify-center my-10 border-none bg-white overflow-hidden items-center">
-                    <ModalContent className="container mx-auto">
-                      <h4 className="text-lg md:text-2xl text-neutral-600 text-center font-bold mb-8">
-                        <span className="px-1 py-0.5 rounded-md bg-gray-100 border border-gray-200">
-                          {item.title}
-                        </span>{" "}
-                        🌳
-                      </h4>
-                      <div className="flex flex-col container mx-auto items-center">
-                        {images.length > 0 && (
-                          <>
-                         <Swiper
-  modules={[Autoplay, Thumbs]}
-  thumbs={{ swiper: thumbsSwiper || null }}
-  className="w-full max-w-lg"
+                  <ModalBody className="flex justify-center my-10 border-none bg-[#F6FFEA] overflow-hidden items-center">
+                  <ModalContent className="container mx-auto p-5">
+
+  
+  <div className="flex flex-col items-center w-full">
+    {images.length > 0 && (
+      <>
+        {/* Swiper utama dengan gambar besar rata dengan teks */}
+        <Swiper
+          modules={[Autoplay, Thumbs]}
+          thumbs={{ swiper: thumbsSwiper || null }}
+          autoplay={{
+            delay: 3000, // Delay dalam milidetik (3 detik)
+            disableOnInteraction: false, // Tetap autoplay meskipun user berinteraksi
+          }}
+          loop={true}
+          className="w-full  h-full"
+        >
+          {images.map((img, i) => (
+            <SwiperSlide key={i}>
+              <img
+                src={`http://192.168.1.22:8000/storage/wahana/${img}`}
+                alt={`${item.title} - ${i}`}
+                className="w-full h-72 md:h-96 lg:h-[500px] object-cover rounded-lg"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        {/* Swiper Thumbnail */}
+        <Swiper
+  onSwiper={(swiper) => setThumbsSwiper(swiper)}
+  slidesPerView={4}
+  spaceBetween={2} // Mengurangi jarak antar gambar
+  watchSlidesProgress
+  className="w-full my-2"
 >
   {images.map((img, i) => (
-    <SwiperSlide key={i}>
+    <SwiperSlide key={i} className="!-mr-[190px]">
       <img
         src={`http://192.168.1.22:8000/storage/wahana/${img}`}
-        alt={`${item.title} - ${i}`}
-        className="w-full h-60 md:h-80 lg:h-80 xl:h-80 object-cover rounded-lg"
+        alt={`${item.title}`}
+        className="w-20 h-20 object-cover  rounded-md cursor-pointer border border-gray-300 hover:border-black"
       />
     </SwiperSlide>
   ))}
 </Swiper>
 
-<Swiper
-  onSwiper={(swiper) => {
-    if (swiper) {
-      setThumbsSwiper(swiper);
-    }
-  }}
-  slidesPerView={4}
-  spaceBetween={10}
-  watchSlidesProgress
-  className="w-full max-w-lg mt-4"
->
-  {images.map((img, i) => (
-    <SwiperSlide key={i}>
-      <img
-        src={`http://192.168.1.22:8000/storage/wahana/${img}`}
-        alt={`${item.title}`}
-        className="w-20 h-16 object-cover rounded-md cursor-pointer border border-gray-300 hover:border-black"
-      />
-    </SwiperSlide>
-  ) )}
-</Swiper>
-                          </>
-                        )}
-                      </div>
-                      <p className="mt-4 text-gray-700">{item.description}</p>
-                    </ModalContent>
+      </>
+    )}
+  </div>
+  <h4 className="text-lg md:text-2xl text-neutral-600 text-left font-bold my-8">
+    <span className="px-3 py-1 rounded-md bg-gray-100 border text-[40px] border-gray-200">
+      {item.title}
+    </span>
+  </h4>
+  {/* Deskripsi teks rata kanan kiri */}
+  <p 
+  className="mt-4 text-black text-[20px] [&>ul]:list-disc [&>ul]:pl-5 [&>ol]:list-decimal [&>ol]:pl-5" 
+  dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.description) }} 
+/>
+</ModalContent>
                   </ModalBody>
                 </Modal>
               );
             })}
           </motion.div>
         )}
+      </div>
+
+      {/* Fixed Background Image */}
+      <div className="absolute -bottom-1 w-full">
+        <img
+          src="/images/01.png"
+          alt="Gambar wahana"
+          className="w-full h-full"
+        />
       </div>
     </div>
   );

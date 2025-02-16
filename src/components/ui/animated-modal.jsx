@@ -62,7 +62,7 @@ export const ModalBody = ({ children, className }) => {
           <motion.div
             ref={modalRef}
             className={cn(
-              "h-full my-10 w-full container mx-auto bg-white dark:bg-neutral-950 border dark:border-neutral-800 rounded-2xl relative z-50 flex flex-col overflow-hidden",
+              "h-full my-10 w-full  bg-[#F6FFEA] dark:bg-neutral-950 border dark:border-neutral-800   relative z-50 flex flex-col overflow-hidden",
               className
             )}
             initial={{ opacity: 0, scale: 0.5, rotateX: 40, y: 40 }}
@@ -116,7 +116,7 @@ const CloseIcon = () => {
   };
 
   return (
-    <button type="button" onClick={handleClose} className="absolute top-4 right-4">
+    <button type="button" onClick={handleClose} className="absolute top-4 right-[3.5rem]">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
