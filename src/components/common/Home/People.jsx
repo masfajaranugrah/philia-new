@@ -32,37 +32,37 @@ export default function People() {
 const testimonials = [
   {
     id: 1, // Tambahkan ID unik
-    title: "Charles Dickens",
+    title: "Sudiyo ST",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Banyak gazebo gratis dan spot foto instagramable, trek apv menantang, akses jalan sudah bagus kecuali masuk ke parkiran (perlu ditingkatkan), ada penginapannya juga...overall bagus.",
     location: "Jakarta",
   },
   {
     id: 2,
-    title: "Jane Austen",
+    title: "Fariz Rizki",
     description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Cocok untuk mengisi liburan anak2 ada gazebo, kolam renang dan juga mini marketnya, harga tiket masih termasuk murah.",
     location: "Bandung",
   },
   {
     id: 3,
-    title: "Mark Twain",
+    title: "dsm sinarmandiri",
     description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "Ayo teman2 serbu dan ramaikan,ngga bohong tempatnya indah enak ramah2 bebas pungli,kumplit permainannya..semoga terus maju...tempat camping ya juga ada,next saya mau kemping ,kira2 berapa harganya ya admin.",
     location: "Surabaya",
   },
   {
     id: 4,
-    title: "Leo Tolstoy",
+    title: "dwi kurniawan",
     description:
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    location: "Jakarta Selatan",
+      "recomended sih buat saya, kapan kapan bakal main kesitu lagi.. dari kota bekasi.",
+    location: "Bekasi",
   },
   {
     id: 5,
-    title: "Emily Brontë",
+    title: "Prasetya Aji Irwan",
     description:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-    location: "Yogyakarta",
+      "Datang weekday ,suasana oke ,asri , untuk biaya parkir dan masuk murah ,wahana juga murah ,menu di minimarket juga lumayan komplit dan murah,ada cafe ,kolam renang,mini market,srodotan,atf ,taman bermain , joging track dan penginapan,overall oke.",
+    location: "Bekasi",
   },
 ];

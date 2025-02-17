@@ -11,7 +11,7 @@ const cardVariants = {
 const fasilitasData = [
   {
     id: 1,
-    image: "/images/kopi.png",
+    image: "/images/getting/kopi.png",
     title: "Kedai Philia",
     description:
       "Tempat makan seru dengan banyak pilihan makanan dan minuman lezat. Kamu bisa duduk santai sambil menikmati hidangan favoritmu di sini!",
@@ -19,7 +19,7 @@ const fasilitasData = [
   },
   {
     id: 2,
-    image: "/images/kopi.png",
+    image: "/images/getting/keranjang.png",
     title: "Philia Mart",
     description:
       "Toko kecil yang menjual berbagai barang seperti camilan, minuman, atau kebutuhan lainnya. Tempat yang pas kalau kamu butuh sesuatu dengan cepat!.",
@@ -27,7 +27,7 @@ const fasilitasData = [
   },
   {
     id: 3,
-    image: "/images/kopi.png",
+    image: "/images/getting/snack.png",
     title: "Warung",
     description:
       "Tempat makan sederhana yang menyediakan makanan lokal yang enak. Cocok kalau kamu ingin mencoba masakan yang rasanya seperti di rumah.",
@@ -35,7 +35,7 @@ const fasilitasData = [
   },
   {
     id: 4,
-    image: "/images/kopi.png",
+    image: "/images/getting/lari.png",
     title: "Jogging Track",
     description:
       "Jalur untuk lari atau jalan santai di alam terbuka. Udara segar dan pemandangan yang indah bikin olahraga jadi lebih menyenangkan.",
@@ -43,7 +43,7 @@ const fasilitasData = [
   },
   {
     id: 5,
-    image: "/images/kopi.png",
+    image: "/images/getting/maps.png",
     title: "Bobo Cabin",
     description:
       "Kabin kecil yang nyaman untuk beristirahat. Tempat ini seperti rumah mini yang cocok untuk tidur nyenyak setelah seharian bermain.",
@@ -51,7 +51,7 @@ const fasilitasData = [
   },
   {
     id: 6,
-    image: "/images/kopi.png",
+    image: "/images/getting/mobil.png",
     title: "Campervan",
     description:
       "Mobil keren yang bisa kamu gunakan untuk camping. Di dalamnya ada tempat tidur dan perlengkapan lain untuk bermalam di alam. Serasa petualangan!.",
@@ -59,19 +59,19 @@ const fasilitasData = [
   },
   {
     id: 7,
-    image: "/images/kopi.png",
+    image: "/images/getting/aula.png",
     title: "Aula",
     description:
       "Ruangan besar untuk berbagai acara seru. Kamu bisa ikut kegiatan seperti permainan, lomba, atau kumpul bersama teman-teman di sini.",
-    location: "Zona 1",
+    location: "Zona 4",
   },
   {
     id: 8,
-    image: "/images/kopi.png",
+    image: "/images/getting/toilet.png",
     title: "Tiolet",
     description:
       "Tempat untuk keperluan buang air dan membersihkan diri. Bersih dan nyaman, jadi kamu bisa merasa tenang saat menggunakannya.",
-    location: "Zona 1",
+    location: "Zona 4",
   },
 ];
 
@@ -101,7 +101,7 @@ const Card = () => {
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="h-28 w-28 xl:h-40 xl:w-40 md:h-30 md:w-30 lg:h-28 lg:w-28 pl-4 md:pl-0"
+                      className="h-28 w-28 xl:h-40 xl:w-40 md:h-30 md:w-30 lg:h-28 lg:w-28 md:pl-0"
                     />
                   </div>
 
