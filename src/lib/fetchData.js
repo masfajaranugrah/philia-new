@@ -37,3 +37,17 @@ export const fetchFasilitas = async () => {
     throw error;
   }
 };
+
+export const fetchWA = async () => {
+  try {
+    const response = await fetch("/api/telphone");
+     if (!response.ok) {
+      throw new Error("Gagal mengambil data tlp");
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("Error fetching events:", error);
+    throw error;
+  }
+};
+

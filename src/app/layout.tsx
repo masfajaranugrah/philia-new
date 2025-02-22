@@ -18,8 +18,8 @@ import dotenv from "dotenv";
 
 dotenv.config();
 export const metadata: Metadata = {
-  title: "Nama Website | Layanan Digital Terbaik untuk Bisnis Anda",
-  description: "Tingkatkan bisnis Anda dengan layanan digital terbaik. SEO, Web Development, dan Optimasi Media Sosial dalam satu platform.",
+  title: "PHILIA ADVENTURE PARK | menawarkan pengalaman berpetualang",
+  description: "Sebuah destinasi petualangan yang menawarkan pengalaman tak terlupakan bagi Anda yang ingin menjelajahi keindahan alam sambil menikmati aktivitas yang penuh keseruan. Terletak di lokasi yang tenang dan hijau, taman ini dirancang khusus untuk menghadirkan harmoni sempurna antara rekreasi dan eksplorasi alam.",
   keywords: [
     "layanan digital",
     "jasa SEO profesional",
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Nama Kamu", url: "https://www.namasitus.com" }],
   openGraph: {
-    title: "Nama Website | Layanan Digital Terbaik",
-    description: "Dapatkan solusi digital terbaik untuk bisnis Anda. Dari SEO hingga Web Development, kami siap membantu.",
+    title: "PHILIA ADVENTURE PARK | menawarkan pengalaman berpetualang",
+    description: "Sebuah destinasi petualangan yang menawarkan pengalaman tak terlupakan bagi Anda yang ingin menjelajahi keindahan alam sambil menikmati aktivitas yang penuh keseruan. Terletak di lokasi yang tenang dan hijau, taman ini dirancang khusus untuk menghadirkan harmoni sempurna antara rekreasi dan eksplorasi alam.",
     url: "https://www.namasitus.com",
     siteName: "Nama Website",
     images: [
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@nama_twitter",
-    title: "Nama Website | Layanan Digital Terbaik",
-    description: "Optimasi SEO, Web Development, dan solusi digital lainnya.",
+    title: "PHILIA ADVENTURE PARK | menawarkan pengalaman berpetualang",
+  description: "Sebuah destinasi petualangan yang menawarkan pengalaman tak terlupakan bagi Anda yang ingin menjelajahi keindahan alam sambil menikmati aktivitas yang penuh keseruan. Terletak di lokasi yang tenang dan hijau, taman ini dirancang khusus untuk menghadirkan harmoni sempurna antara rekreasi dan eksplorasi alam.",
     images: ["/assets/images/og-image.png"],
   },
   robots: "index, follow",
